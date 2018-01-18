@@ -1,0 +1,57 @@
+[
+    {
+        "title": "$:/plugins/mklauber/math.js",
+        "description": "Add a calc widget that evluates expression using Math.JS",
+        "author": "Matthew Lauber",
+        "version": "1.1.2",
+        "core-version": ">=5.0.0",
+        "plugin-type": "plugin",
+        "list": "",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/plugins/mklauber/dropaction",
+        "description": "DropAction Widget",
+        "author": "Matthew Lauber",
+        "version": "1.1.2",
+        "core-version": ">=5.0.0",
+        "plugin-type": "plugin",
+        "list": "Readme",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/plugins/mklauber/field-editor",
+        "description": "Field Editor",
+        "author": "Matthew Lauber",
+        "version": "1.1.3",
+        "core-version": ">=5.0.0",
+        "plugin-type": "plugin",
+        "list": "Readme",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/plugins/mklauber/preferences",
+        "description": "mklauber's personal Tweaks",
+        "author": "Matthew Lauber",
+        "version": "1.1.2",
+        "core-version": ">=5.0.0",
+        "plugin-type": "plugin",
+        "list": "",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/plugins/mklauber/shuffle",
+        "description": "A Shuffle filter operator that uses a parameter to create a reproducable random sorting.",
+        "author": "Matthew Lauber",
+        "version": "1.0.0",
+        "core-version": ">=5.0.0",
+        "plugin-type": "plugin",
+        "list": "",
+        "dependents": "",
+        "type": "application/json"
+    }
+]

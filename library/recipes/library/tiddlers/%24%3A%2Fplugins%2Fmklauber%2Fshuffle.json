@@ -1,0 +1,12 @@
+{
+    "title": "$:/plugins/mklauber/shuffle",
+    "description": "A Shuffle filter operator that uses a parameter to create a reproducable random sorting.",
+    "author": "Matthew Lauber",
+    "version": "1.0.0",
+    "core-version": ">=5.0.0",
+    "plugin-type": "plugin",
+    "list": "",
+    "dependents": "",
+    "type": "application/json",
+    "text": "{\n    \"tiddlers\": {\n        \"$:/plugins/mklauber/shuffle/shuffle.js\": {\n            \"title\": \"$:/plugins/mklauber/shuffle/shuffle.js\",\n            \"caption\": \"A filter Operator to randomize the order of the list passed to it.\",\n            \"created\": \"20150811171933696\",\n            \"mklauber-editing-field\": \"text\",\n            \"modified\": \"20160309205236886\",\n            \"module-type\": \"filteroperator\",\n            \"tags\": \"Trick\",\n            \"type\": \"application/javascript\",\n            \"text\": \"(function(){\\n\\n    \\\"use strict\\\";\\n\\n    var hash = function(str) {\\n      var hash = 0, i, chr, len;\\n      if (str.length === 0) return hash;\\n      for (i = 0, len = str.length; i < len; i++) {\\n        chr   = str.charCodeAt(i);\\n        hash  = ((hash << 5) - hash) + chr;\\n        hash |= 0; // Convert to 32bit integer\\n      }\\n      return hash;\\n    }\\n\\n    var shuffle = function(array, seed) {\\n      var currentIndex = array.length, temporaryValue, randomIndex ;\\n      var seed = typeof seed !== 'undefined' ? seed : Math.random();\\n\\n      // While there remain elements to shuffle...\\n      while (0 !== currentIndex) {\\n\\n        // Pick a remaining element...\\n        randomIndex = Math.floor(Math.abs(Math.sin(seed++)) * currentIndex);\\n        currentIndex -= 1;\\n\\n        // And swap it with the current element.\\n        temporaryValue = array[currentIndex];\\n        array[currentIndex] = array[randomIndex];\\n        array[randomIndex] = temporaryValue;\\n      }\\n\\n      return array;\\n    }\\n\\n    var prepare_results = function (source) {\\n\\t    var results = [];\\n\\t    source(function(tiddler,title) {\\n\\t\\t    results.push(title);\\n\\t    });\\n\\t    return results;\\n    };\\n\\n    exports.shuffle = function(source, operator, options) {\\n       var results = prepare_results(source);\\n       if (operator['operand'] == \\\"\\\") {\\n           shuffle(results);\\n       } else {\\n           shuffle(results, hash(operator['operand']));\\n       }\\n       return results;\\n    }\\n})();\"\n        }\n    }\n}"
+}
