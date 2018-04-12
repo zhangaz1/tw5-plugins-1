@@ -1,5 +1,27 @@
 [
     {
+        "title": "$:/plugins/mklauber/SoundPad",
+        "description": "SoundPad",
+        "author": "Matthew Lauber",
+        "version": "1.0.0",
+        "core-version": ">=5.0.1",
+        "plugin-type": "plugin",
+        "list": "",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/plugins/mklauber/SoundPad-Sounds",
+        "description": "Sounds for mklauber's SoundPad",
+        "author": "Matthew Lauber",
+        "version": "1.0.0",
+        "core-version": ">=5.0.1",
+        "plugin-type": "plugin",
+        "list": "",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
         "title": "$:/plugins/mklauber/aliases",
         "description": "Aliases - Alias Manager",
         "author": "Matthew Lauber",
