@@ -10,19 +10,40 @@
 <script>
 var assetList = [
     {
-        "title": "$:/plugins/mklauber/SoundPad",
-        "description": "SoundPad",
-        "author": "Matthew Lauber",
-        "version": "1.0.0",
-        "core-version": ">=5.0.1",
+        "title": "$:/plugins/D&DTools/Monsters",
+        "author": "Matt Lauber",
+        "description": "D&D 5e SRD Monsters",
         "plugin-type": "plugin",
-        "list": "",
+        "version": "0.0.1",
         "dependents": "",
         "type": "application/json"
     },
     {
-        "title": "$:/plugins/mklauber/SoundPad-Sounds",
-        "description": "Sounds for mklauber's SoundPad",
+        "title": "$:/plugins/D&DTools/Spells",
+        "author": "Matt Lauber",
+        "description": "D&D 5e SRD Spells",
+        "plugin-type": "plugin",
+        "version": "1.0.2",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/plugins/D&DTools/CreatureManager",
+        "author": "Matt Lauber",
+        "created": "2018-12-17T14:28:48.203Z",
+        "description": "D&D Creature Manager",
+        "list": "readme",
+        "modified": "2018-12-17T19:06:41.385Z",
+        "plugin-priority": "1",
+        "plugin-type": "plugin",
+        "version": "1.0.8",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "The [[Creature Manager|$:/plugins/D&DTools/CreatureManager]] plugin is a tool for displaying Stat Blocks for D&D 5e creatures.\n\n<div style=\"clear:both\" />\n\n<div style=\"float:left;\">\nSelect a Monster: <$select tiddler=\"$:/temp/CreatureManager/Monster\">\n<$list filter=\"[all[tiddlers+shadows]type[Creature]]\">\n<option value=<<currentTiddler>>><$view field='title'/></option>\n</$list>\n</$select>\n</div>\n\n<div style=\"float:right;\">\n<$tiddler tiddler={{$:/temp/CreatureManager/Monster}}>\n<$transclude tiddler=\"$:/plugins/D&DTools/CreatureManager/ViewTemplate\">\n{{Kobold||$:/plugins/D&DTools/CreatureManager/ViewTemplate}}\n</$transclude>\n</$tiddler> \n</div>\n<div style=\"clear:both;\" />"
+    },
+    {
+        "title": "$:/plugins/mklauber/SoundPad",
+        "description": "SoundPad",
         "author": "Matthew Lauber",
         "version": "1.0.0",
         "core-version": ">=5.0.1",
