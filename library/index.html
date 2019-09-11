@@ -42,15 +42,27 @@ var assetList = [
         "readme": "The [[Creature Manager|$:/plugins/D&DTools/CreatureManager]] plugin is a tool for displaying Stat Blocks for D&D 5e creatures.\n\n<div style=\"clear:both\" />\n\n<div style=\"float:left;\">\nSelect a Monster: <$select tiddler=\"$:/temp/CreatureManager/Monster\">\n<$list filter=\"[all[tiddlers+shadows]type[Creature]]\">\n<option value=<<currentTiddler>>><$view field='title'/></option>\n</$list>\n</$select>\n</div>\n\n<div style=\"float:right;\">\n<$tiddler tiddler={{$:/temp/CreatureManager/Monster}}>\n<$transclude tiddler=\"$:/plugins/D&DTools/CreatureManager/ViewTemplate\">\n{{Kobold||$:/plugins/D&DTools/CreatureManager/ViewTemplate}}\n</$transclude>\n</$tiddler> \n</div>\n<div style=\"clear:both;\" />"
     },
     {
-        "title": "$:/plugins/DMTools/NPCNameGenerator",
+        "title": "$:/plugins/D&DTools/EncounterBuilder",
+        "author": "Matt Lauber",
+        "created": "2019-09-09T14:28:48.203Z",
+        "description": "D&D Encounter Builder",
+        "list": "",
+        "modified": "2019-09-10T19:06:41.385Z",
+        "plugin-priority": "1",
+        "plugin-type": "plugin",
+        "version": "1.0.8",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/plugins/D&DTools/NPCNameGenerator",
         "author": "Matt Lauber",
         "description": "NPC Name Generator",
         "list": "readme [[Control Panel]]",
         "plugin-type": "plugin",
         "version": "1.0.3",
         "dependents": "",
-        "type": "application/json",
-        "readme": "The DMTools Name Generator Plugin is a tool for quickly generating random names for NPCs in a tabletop RPG.  For the purposes of using tiddlywiki for managing a tabletop RPG, this tool will generate a list of names which can be clicked on to create tiddlers.  The Control Panel for this plugin will control the default tags and text of the created NPCs for tagging and templating purposes.\n\nTo create new name types, clone the existing name tiddlers and modify the attached fields.  For first and last names, clone and modify the human names.  For single word names, use the orc names.  \n\nIncluded in this plugin is a copy of my \"shuffle[]\" filter operator.  Refer to https://mklauber.github.io/tw5-plugins/#Shuffle%20Operator for documentation.\n"
+        "type": "application/json"
     },
     {
         "title": "$:/plugins/mklauber/SoundPad",
