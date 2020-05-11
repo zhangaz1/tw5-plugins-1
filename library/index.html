@@ -18,7 +18,8 @@ var assetList = [
         "tags": "[[D&D]]",
         "summary": "D&D 5e SRD Creatures",
         "dependents": "",
-        "type": "application/json"
+        "type": "application/json",
+        "requires-reload": "no"
     },
     {
         "title": "$:/plugins/D&DTools/Spells",
@@ -29,7 +30,8 @@ var assetList = [
         "tags": "[[D&D]]",
         "summary": "D&D 5e SRD Spells",
         "dependents": "",
-        "type": "application/json"
+        "type": "application/json",
+        "requires-reload": "no"
     },
     {
         "title": "$:/plugins/D&DTools/CreatureManager",
@@ -45,7 +47,8 @@ var assetList = [
         "summary": "D&D 5e Creature Stat Block Templates",
         "dependents": "",
         "type": "application/json",
-        "readme": "The [[Creature Manager|$:/plugins/D&DTools/CreatureManager]] plugin is a tool for displaying Stat Blocks for D&D 5e creatures.\n\n<div style=\"clear:both\" />\n\n<div style=\"float:left;\">\nSelect a Monster: <$select tiddler=\"$:/temp/CreatureManager/Monster\">\n<$list filter=\"[all[tiddlers+shadows]type[Creature]]\">\n<option value=<<currentTiddler>>><$view field='title'/></option>\n</$list>\n</$select>\n</div>\n\n<div style=\"float:right;\">\n<$tiddler tiddler={{$:/temp/CreatureManager/Monster}}>\n<$transclude tiddler=\"$:/plugins/D&DTools/CreatureManager/ViewTemplate\">\n{{Kobold||$:/plugins/D&DTools/CreatureManager/ViewTemplate}}\n</$transclude>\n</$tiddler> \n</div>\n<div style=\"clear:both;\" />"
+        "readme": "The [[Creature Manager|$:/plugins/D&DTools/CreatureManager]] plugin is a tool for displaying Stat Blocks for D&D 5e creatures.\n\n<div style=\"clear:both\" />\n\n<div style=\"float:left;\">\nSelect a Monster: <$select tiddler=\"$:/temp/CreatureManager/Monster\">\n<$list filter=\"[all[tiddlers+shadows]type[Creature]]\">\n<option value=<<currentTiddler>>><$view field='title'/></option>\n</$list>\n</$select>\n</div>\n\n<div style=\"float:right;\">\n<$tiddler tiddler={{$:/temp/CreatureManager/Monster}}>\n<$transclude tiddler=\"$:/plugins/D&DTools/CreatureManager/ViewTemplate\">\n{{Kobold||$:/plugins/D&DTools/CreatureManager/ViewTemplate}}\n</$transclude>\n</$tiddler> \n</div>\n<div style=\"clear:both;\" />",
+        "requires-reload": "no"
     },
     {
         "title": "$:/plugins/D&DTools/EncounterBuilder",
@@ -60,7 +63,8 @@ var assetList = [
         "tags": "[[D&D]]",
         "summary": "D&D 5e Encounter Builder Tool",
         "dependents": "",
-        "type": "application/json"
+        "type": "application/json",
+        "requires-reload": "no"
     },
     {
         "title": "$:/plugins/mklauber/SoundPad",
@@ -71,18 +75,20 @@ var assetList = [
         "plugin-type": "plugin",
         "list": "",
         "dependents": "",
-        "type": "application/json"
+        "type": "application/json",
+        "requires-reload": "no"
     },
     {
         "title": "$:/plugins/mklauber/aliases",
         "description": "Aliases - Alias Manager",
         "author": "Matthew Lauber",
-        "version": "1.0.0",
+        "version": "5.1.22",
         "core-version": ">=5.1.18",
         "plugin-type": "plugin",
         "list": "",
         "dependents": "",
-        "type": "application/json"
+        "type": "application/json",
+        "requires-reload": "yes"
     },
     {
         "title": "$:/plugins/mklauber/math.js",
@@ -93,7 +99,8 @@ var assetList = [
         "plugin-type": "plugin",
         "list": "",
         "dependents": "",
-        "type": "application/json"
+        "type": "application/json",
+        "requires-reload": "yes"
     },
     {
         "title": "$:/plugins/mklauber/substory",
@@ -104,7 +111,8 @@ var assetList = [
         "plugin-type": "plugin",
         "list": "readme",
         "dependents": "",
-        "type": "application/json"
+        "type": "application/json",
+        "requires-reload": "yes"
     },
     {
         "title": "$:/plugins/mklauber/dropaction",
@@ -115,7 +123,8 @@ var assetList = [
         "plugin-type": "plugin",
         "list": "Readme",
         "dependents": "",
-        "type": "application/json"
+        "type": "application/json",
+        "requires-reload": "yes"
     },
     {
         "title": "$:/plugins/mklauber/preferences",
@@ -126,7 +135,8 @@ var assetList = [
         "plugin-type": "plugin",
         "list": "",
         "dependents": "",
-        "type": "application/json"
+        "type": "application/json",
+        "requires-reload": "no"
     },
     {
         "title": "$:/plugins/mklauber/shuffle",
@@ -138,7 +148,8 @@ var assetList = [
         "list": "readme",
         "dependents": "",
         "type": "application/json",
-        "readme": "|!purpose|Randomize the order of the input list|\n|!input|a selection of titles|\n|!parameter|a random string to be used to create consistent random ordering|\n|!output|The input titles, rearranged in a random order|\n\nThis plugin implements a new filter operator called Shuffle.  This operator takes the input list and randomizes the order of the list.  If no parameter is provided, the list order is random every time.\n\n!!!Example:\n```\n<$list filter=\"1 2 3 4 5 +[shuffle[]]\">\n\n</$list>\n```\n\n<$button popup=\"$:/state/shuffle/reveal1\">Run Demo</$button>\n\n<$reveal type=\"popup\" state=\"$:/state/shuffle/reveal1\">\n<div class=\"tc-drop-down\">\n<$list filter=\"1 2 3 4 5 +[shuffle[]]\">\n\n</$list>\n</div>\n</$reveal>\n\nCombining this operator with the first operator allows you to choose 1 or more titles randomly from a list.\n\n!!!Example:\n```\n<$list filter=\"1 2 3 4 5 +[shuffle[]first[2]]\">\n\n</$list>\n```\n\n<$button popup=\"$:/state/shuffle/reveal2\">Run Demo</$button>\n\n<$reveal type=\"popup\" state=\"$:/state/shuffle/reveal2\">\n<div class=\"tc-drop-down\">\n<$list filter=\"1 2 3 4 5 +[shuffle[]first[2]]\">\n\n</$list>\n</div>\n</$reveal>\n\nIf a parameter is provided the list will be ordered identically every time it is rendered.  This can be useful in conjunction a button that updates a state tiddler.  Set the parameter of this operator to reference that state tiddler, and create a button that updates that tiddler, and now the ordering of the random operators only changes when the button is pressed.\n\n!!!Example:\n```\n<$button>\n<$action-setfield $tiddler=\"$:/temp/shuffle/example\" $field=\"state\" $value=<<now \"0hh:0mm:0ss\">>/>\nChange Order\n</$button>\n\n<$list filter=\"1 2 3 4 5 +[shuffle{$:/temp/shuffle/example!!state}]\">\n\n</$list>\n```\n\n<$button>\n<$action-setfield $tiddler=\"$:/temp/shuffle/example\" $field=\"state\" $value=<<now \"0hh:0mm:0ss\">>/>\nUpdate\n</$button>\n\n<$list filter=\"1 2 3 4 5 +[shuffle{$:/temp/shuffle/example!!state}]\">\n\n</$list>\n"
+        "readme": "|!purpose|Randomize the order of the input list|\n|!input|a selection of titles|\n|!parameter|a random string to be used to create consistent random ordering|\n|!output|The input titles, rearranged in a random order|\n\nThis plugin implements a new filter operator called Shuffle.  This operator takes the input list and randomizes the order of the list.  If no parameter is provided, the list order is random every time.\n\n!!!Example:\n```\n<$list filter=\"1 2 3 4 5 +[shuffle[]]\">\n\n</$list>\n```\n\n<$button popup=\"$:/state/shuffle/reveal1\">Run Demo</$button>\n\n<$reveal type=\"popup\" state=\"$:/state/shuffle/reveal1\">\n<div class=\"tc-drop-down\">\n<$list filter=\"1 2 3 4 5 +[shuffle[]]\">\n\n</$list>\n</div>\n</$reveal>\n\nCombining this operator with the first operator allows you to choose 1 or more titles randomly from a list.\n\n!!!Example:\n```\n<$list filter=\"1 2 3 4 5 +[shuffle[]first[2]]\">\n\n</$list>\n```\n\n<$button popup=\"$:/state/shuffle/reveal2\">Run Demo</$button>\n\n<$reveal type=\"popup\" state=\"$:/state/shuffle/reveal2\">\n<div class=\"tc-drop-down\">\n<$list filter=\"1 2 3 4 5 +[shuffle[]first[2]]\">\n\n</$list>\n</div>\n</$reveal>\n\nIf a parameter is provided the list will be ordered identically every time it is rendered.  This can be useful in conjunction a button that updates a state tiddler.  Set the parameter of this operator to reference that state tiddler, and create a button that updates that tiddler, and now the ordering of the random operators only changes when the button is pressed.\n\n!!!Example:\n```\n<$button>\n<$action-setfield $tiddler=\"$:/temp/shuffle/example\" $field=\"state\" $value=<<now \"0hh:0mm:0ss\">>/>\nChange Order\n</$button>\n\n<$list filter=\"1 2 3 4 5 +[shuffle{$:/temp/shuffle/example!!state}]\">\n\n</$list>\n```\n\n<$button>\n<$action-setfield $tiddler=\"$:/temp/shuffle/example\" $field=\"state\" $value=<<now \"0hh:0mm:0ss\">>/>\nUpdate\n</$button>\n\n<$list filter=\"1 2 3 4 5 +[shuffle{$:/temp/shuffle/example!!state}]\">\n\n</$list>\n",
+        "requires-reload": "yes"
     },
     {
         "title": "$:/plugins/D&DTools/NPCNameGenerator",
@@ -150,7 +161,8 @@ var assetList = [
         "tags": "[[D&D]]",
         "summary": "Random Name Generator for NPCs",
         "dependents": "",
-        "type": "application/json"
+        "type": "application/json",
+        "requires-reload": "yes"
     }
 ];
 
